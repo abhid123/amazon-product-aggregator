@@ -1,0 +1,29 @@
+
+.layout {
+    background-color: #f0f2f5;
+}
+
+.ant-input-search {
+    border-radius: 8px;
+}
+
+.ant-table {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ant-table-thead > tr > th {
+    background-color: #fafafa;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .ant-table {
+        font-size: 14px;
+    }
+
+    .ant-input-search {
+        margin-bottom: 15px;
+    }
+} 
