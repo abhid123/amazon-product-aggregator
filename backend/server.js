@@ -2,7 +2,6 @@ const express = require('express');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const cors = require('cors');
-const path = require('path');
 
 const app = express();
 app.use(cors());
@@ -50,14 +49,8 @@ app.get('/search', async (req, res) => {
     }
 });
 
-
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
-});
-
-const PORT = process.env.PORT || 10000;
+// Listen on a dynamic port for Render
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

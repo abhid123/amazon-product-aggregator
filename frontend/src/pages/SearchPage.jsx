@@ -15,7 +15,7 @@ const SearchPage = () => {
             notification.warning({ message: 'Please enter a search term.' });
             return;
         }
-
+    
         setLoading(true);
         try {
             const response = await axios.get(`https://render.com/docs/web-services#port-binding/search?query=${encodeURIComponent(value)}`);
@@ -30,6 +30,7 @@ const SearchPage = () => {
             setLoading(false);
         }
     };
+    
 
     const columns = [
         { title: 'Product Name', dataIndex: 'name', key: 'name' },
