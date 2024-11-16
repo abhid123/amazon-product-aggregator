@@ -18,7 +18,7 @@ const SearchPage = () => {
     
         setLoading(true);
         try {
-            const response = await axios.get(`https://render.com/docs/web-services#port-binding/search?query=${encodeURIComponent(value)}`);
+            const response = await axios.get(`https://amazon-product-aggregator.onrender.com/search?query=${encodeURIComponent(value)}`);
             setProducts(response.data);
         } catch (error) {
             console.error('Error fetching data:', error.response?.data || error.message);
