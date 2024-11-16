@@ -42,7 +42,7 @@ app.get('/search', async (req, res) => {
             }
         });
 
-        console.log(products); // Debugging: Print fetched products
+        console.log(products); 
         res.json(products);
     } catch (error) {
         console.error('Error scraping data:', error);
@@ -50,14 +50,14 @@ app.get('/search', async (req, res) => {
     }
 });
 
-// Serve static files from the React app
+
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
