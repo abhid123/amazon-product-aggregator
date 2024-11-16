@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Input, Table, Spin, notification, Layout, Row, Col } from 'antd';
 import axios from 'axios';
-import './SearchPage.css'; // Import custom CSS
+import './SearchPage.css'; 
 
 const { Search } = Input;
 const { Content } = Layout;
@@ -33,8 +33,8 @@ const SearchPage = () => {
 
     const columns = [
         { title: 'Product Name', dataIndex: 'name', key: 'name' },
-        { title: 'Price', dataIndex: 'price', key: 'price', responsive: ['md'] }, // Only show on medium screens and above
-        { title: 'Rating', dataIndex: 'rating', key: 'rating', responsive: ['md'] }, // Only show on medium screens and above
+        { title: 'Price', dataIndex: 'price', key: 'price', responsive: ['md'] }, 
+        { title: 'Rating', dataIndex: 'rating', key: 'rating', responsive: ['md'] }, 
         { title: 'ASIN', dataIndex: 'asin', key: 'asin' },
     ];
 

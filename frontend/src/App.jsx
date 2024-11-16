@@ -1,6 +1,6 @@
 import React from 'react';
-import 'antd/dist/reset.css'; // Import Ant Design styling reset
-import './App.css'; // Import custom CSS for overall styling
+import 'antd/dist/reset.css';
+import './App.css'; 
 import SearchPage from './pages/SearchPage';
 
 const App = () => {
