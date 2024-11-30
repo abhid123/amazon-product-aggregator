@@ -41,17 +41,13 @@ app.get('/search', async (req, res) => {
             }
         });
 
-        if (products.length === 0) {
-            throw new Error('No products found for the given query');
-        }
-
+        console.log(products); 
         res.json(products);
     } catch (error) {
-        console.error('Error scraping data:', error.message);
-        res.status(500).json({ error: 'Failed to fetch product data. Please try again later.' });
+        console.error('Error scraping data:', error);
+        res.status(500).json({ error: 'Failed to fetch product data' });
     }
 });
-
 
 // Listen on a dynamic port for Render
 const PORT = process.env.PORT || 5000;
