@@ -19,17 +19,21 @@ const SearchPage = () => {
         setLoading(true);
         try {
             const response = await axios.get(`http://localhost:5000/search?query=${encodeURIComponent(value)}`);
+            if (response.data.length === 0) {
+                notification.info({ message: 'No products found for your query.' });
+            }
             setProducts(response.data);
         } catch (error) {
             console.error('Error fetching data:', error.response?.data || error.message);
             notification.error({
-                message: 'Failed to fetch product data',
-                description: error.response?.data?.error || 'Unknown error occurred',
+                message: 'Backend Error',
+                description: 'Backend is unable to fetch data. Please try again later.',
             });
         } finally {
             setLoading(false);
         }
     };
+    
     
 
     const columns = [
